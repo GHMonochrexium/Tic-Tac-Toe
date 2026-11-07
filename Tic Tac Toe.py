@@ -11,14 +11,42 @@ turns = 0
 def TicTacToe(button_id):
     global turn,turns
     button_id.config(text=turn)
+    if b1.cget("text") == b2.cget("text") == b3.cget("text") != "":
+            messagebox.showinfo("You Won!",turn + " won the game!")
+            screen.destroy()
+    if b4.cget("text") == b5.cget("text") == b6.cget("text") != "":
+            messagebox.showinfo("You Won!",turn + " won the game!")
+            screen.destroy()
+    if b7.cget("text") == b8.cget("text") == b9.cget("text") != "":
+            messagebox.showinfo("You Won!",turn + " won the game!")
+            screen.destroy()
+    if b1.cget("text") == b4.cget("text") == b7.cget("text") != "":
+                messagebox.showinfo("You Won!",turn + " won the game!")
+                screen.destroy()
+    if b2.cget("text") == b5.cget("text") == b8.cget("text") != "":
+                messagebox.showinfo("You Won!",turn + " won the game!")
+                screen.destroy()
+    if b3.cget("text") == b6.cget("text") == b9.cget("text") != "":
+                messagebox.showinfo("You Won!",turn + " won the game!")
+                screen.destroy()
+    if b1.cget("text") == b5.cget("text") == b9.cget("text") != "":
+                messagebox.showinfo("You Won!",turn + " won the game!")
+                screen.destroy()
+    if b3.cget("text") == b5.cget("text") == b7.cget("text") != "":
+                messagebox.showinfo("You Won!",turn + " won the game!")
+                screen.destroy()
+    if turns == 8:
+            messagebox.showinfo("Draw","No one won the game.Its a draw.")
+            screen.destroy()
     if turn == "X":
         turn = "O"
+        turns= turns+1
     else:
         turn = "X"
+        turns= turns+1
     turn_Label.config(text="Turn: "+ turn)
     button_id.config(state=tk.DISABLED)
-    if b1.cget("text") == b2.cget("text") == b3.cget("text") != "":
-        messagebox.showinfo("You Won!",turn + "won the game!")
+    
 b1 = tk.Button(text="",width=13,height=6,bg="black",fg="white",command=lambda: TicTacToe(b1))
 b1.place(x=0,y=0)
 
